@@ -21,28 +21,19 @@ html {
   margin: 0;
 }
 
-.button--green {
+.button--gradient {
+  cursor: pointer;
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
+  background-image: linear-gradient(330deg, #9b28ff 1%, #ed8200 80%, #ed8200 100%);
   color: #35495e;
   text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
+}
+
+.button--gradient span {
+  background-color: rgba(0, 0, 0, 0, 100%);
 }
 
 .button--grey:hover {

@@ -25,14 +25,30 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, { isDev, isClient }) {
+      config.resolve.alias['@fortawesome/fontawesome-free-brands'] = '@fortawesome/fontawesome-free-brands/shakable.es.js';
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
-    }
-  }
+    },
+  },
+  plugins: [
+    { src: '~/plugins/vue-particles', ssr: false },
+    { src: '~/plugins/globals' }
+  ],
+  modules: [
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        {
+          set: '@fortawesome/fontawesome-free-brands',
+          icons: ['faGithub', 'faLinkedin']
+        }
+      ]
+    }]
+  ]
 }
